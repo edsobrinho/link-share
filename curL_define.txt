@@ -1,11 +1,1 @@
-curl --location 'https://define.bvsnet.com.br/DefineXml/servicos/defineLimite/v5' \
---header 'Content-Type: application/xml' \
---header 'Cookie: JSESSIONID=0A955E1124DE8D6C534CEA645D8EABF4' \
---data '<?xml version="1.0" encoding="UTF-8"?>
-<defineLimitePositivoContratoEntradaXml xmlns="http://boavistaservicos.com.br/define/entrada/limite">
-    <cnpj>19780395000110</cnpj>
-    <senha>J172TI</senha>
-    <usuario>01306836</usuario>
-</defineLimitePositivoContratoEntradaXml>
 
-'
