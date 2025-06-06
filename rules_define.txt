@@ -1,0 +1,230 @@
+Define Homol
+
+"define": {
+    "endpoint": "https://definehom.bvsnet.com.br/DefinePositivoXml/servicos/defineLimitePositivo/v3",
+    "username": "00667863",
+    "password": "KON123",
+    "request_schema": "src/main/resources/xml/defineRequest.xml",
+    "response_schema": "src/main/resources/xml/define/response_schema.json"
+  },
+
+  CNPJ  Konduto
+19.780.395/0001-10
+
+https://define.bvsnet.com.br/DefinePositivoXml/servicos/defineLimitePositivo/v3
+
+gabriel.santos2@equifax.com
+
+wget https://chefdownload-commercial.chef.io/stable/chef-workstation/download?p=el&pv=9&m=x86_64&v=24.4.1068&license_id=free
+
+
+curl --location 'https://define.bvsnet.com.br/DefineXml/servicos/defineLimite/v5' \ 
+--header 'Content-Type: application/xml' \ 
+--header 'Cookie: JSESSIONID=3E22A201E64A7C12DEB0F0788E7DCB2E' \ 
+--data '<?xml version="1.0" encoding="UTF-8"?>  
+<defineLimiteContratoEntradaXml xmlns="http://boavistaservicos.com.br/define/entrada/limite">  
+<usuario>01306836</usuario> 
+<senha>J172TI</senha> 
+<cnpj>01580415000144</cnpj> 
+<opcionais> 
+<opcional>anvisa</opcional> 
+<opcional>empresasMesmoEndereco</opcional> 
+</opcionais> 
+<extras> 
+<extra>acaoCiveis</extra> 
+<extra>chequesDevInfUsuario</extra> 
+<extra>chequesSemFundo</extra> 
+<extra>chequesSustado</extra> 
+<extra>falenciaRecJudicial</extra> 
+<extra>pendenciasRestricoes</extra> 
+<extra>protestos</extra> 
+<extra>quantidadeDeConsultas</extra> 
+<extra>sintegra</extra> 
+<extra>administradoresComRestricao</extra> 
+<extra>sociosComRestricao</extra> 
+</extras> 
+</defineLimiteContratoEntradaXml>'
+
+
+curl --location 'https://define.bvsnet.com.br/DefineXml/servicos/defineLimite/v5' \ 
+--header 'Content-Type: application/xml' \ 
+--header 'Cookie: JSESSIONID=3E22A201E64A7C12DEB0F0788E7DCB2E' \ 
+--data '<?xml version="1.0" encoding="UTF-8"?>  
+<defineLimiteContratoEntradaXml xmlns="http://boavistaservicos.com.br/define/entrada/limite">  
+<usuario>01306836</usuario> 
+<senha>J172TI</senha> 
+<cnpj>01580415000144</cnpj> 
+<opcionais> 
+<opcional>anvisa</opcional> 
+<opcional>empresasMesmoEndereco</opcional> 
+</opcionais> 
+<extras> 
+<extra>acaoCiveis</extra> 
+<extra>chequesDevInfUsuario</extra> 
+<extra>chequesSemFundo</extra> 
+<extra>chequesSustado</extra> 
+<extra>falenciaRecJudicial</extra> 
+<extra>pendenciasRestricoes</extra> 
+<extra>protestos</extra> 
+<extra>quantidadeDeConsultas</extra> 
+<extra>sintegra</extra> 
+<extra>administradoresComRestricao</extra> 
+<extra>sociosComRestricao</extra> 
+</extras> 
+</defineLimiteContratoEntradaXml>'
+
+idfsqcore-341
+
+
+
+	"tax_id": "36016796000118",
+  "document_type": "cnpj",
+--validar o tax_id se é um CNPJ válido - formatação e digito verificador
+
+
+Empresas sócias não regulares - Status de CNPJ de empresa sócia diferente de regular - DEFINECNPJSITUATION - input_order = tax_id  define =<idenc:situacao_cnpj>Inapto</idenc:situacao_cnpj> Boleano 1.0 ou 0.0
+
+full_identification.cnpj_status
+
+Cliente é MEI? - Avalia a natureza jurídica do cliente PJ - DEFINECNPJLEGALNATURE - input_order = tax_id  <idenc:natureza_juridica>EMPRESARIO (INDIVIDUAL)</idenc:natureza_juridica> Boleano 1.0 ou 0.0
+
+Tempo desde a fundação do CNPJ -DEFINECNPJTIMESINCEFOUNDATION input_order = tax_id  <idenc:data_fundacao>10/01/2008</idenc:data_fundacao> Feature númerica
+
+"fundation_date": "24/02/2014",
+
+
+Endereço de entrega combina com o Define? DEFINECNPJDELIVERYADDRESSMATCH Boleano 1.0 ou 0.0 ou PERCETUAL 0.33 - Dúvida é se vão existir mais features a partir dessa quebrando em  
+
+	Endereço ?
+-- CEP, Cidade, Estado,  CEP() 1.0 && Cidade() 0.0 && Estado() 1.0 = 0.0 DEFINECNPJDELIVERYADDRESSMATCH = 0.0 esse caminho!
+
+																true && false && true = false == 0.0
+																true && true && true = true == 1.0				
+
+																																					DEFINECNPJDELIVERYADDRESSSIMILARITY=0.33 Podemos implementar num futuro tão tão distânte
+
+
+Endereço de cobrança combina com o Define? - DEFINECNPJBILLINGADDRESSMATCH, Boleano 1.0 ou 0.0 ou PERCETUAL 0.33 Dúvida é se vão existir mais features a partir dessa quebrando em  
+
+	Endereço ?
+-- CEP, Cidade, Estado,  CEP() 0.4 && Cidade() 0.0 && Estado() 0.4 = 0.80 DEFINECNPJDELIVERYADDRESSMATCH
+
+
+
+Telefone combina com o Define?input_order= "phone1": "212-555-1234","phone2": "202-555-6789", DEFINECNPJPHONEMATCH <locc:telefone_matriz>
+																																																			                <locc:telefone>(11) 2295-7027</locc:telefone>
+																																																			            </locc:telefone_matriz>
+
+OBS.: Nem sempre vem o numero de telefone nos dados da Matriz- ? Falar com o Jow
+
+
+Similaridade do nome do cliente com nomes no Define - Nome do cliente <-> Nome da Empresa ou dos sócios DEFINECNPJNAMEPARTNERSMATCH - NGrams --> jaccardSimilarity() Double pegar a maior similiridade no array de sócio
+
+input_order= customer": {"name": "Teste Tom"}
+																																																									 
+																																																									   <locc:localizacao_completo>
+																																																									        <locc:matriz>
+																																																									            <locc:endereco_matriz>R TIJUCO PRETO, 278</locc:endereco_matriz>
+																																																									            <locc:codigo_ibge_matriz>03550308</locc:codigo_ibge_matriz>
+																																																									            <locc:bairro_matriz>TATUAPE</locc:bairro_matriz>
+																																																									            <locc:cep_matriz>03316000</locc:cep_matriz>
+																																																									            <locc:cidade_matriz>SAO PAULO</locc:cidade_matriz>
+																																																									            <locc:uf_matriz>SP</locc:uf_matriz>
+																																																									            <locc:telefone_matriz>
+																																																									                <locc:telefone>(11) 2295-7027</locc:telefone>
+																																																									            </locc:telefone_matriz>
+																																																									        </locc:matriz>
+																																																									    </locc:localizacao_completo>
+
+
+																																																									    	<idenc:razao_social>LENIR NUCIO ROSARIO</idenc:razao_social> -- não vamos utilizar
+        																																																								<idenc:nome_fantasia>CLUBE DO VIDEO</idenc:nome_fantasia> -- não vamos utilizar
+
+																																																												<soc:socios>
+																																																										        <soc:socio>
+																																																										            <soc:nome_empresa>EDNILSON DA SILVA SOBRINHO</soc:nome_empresa>
+																																																										        </soc:socio>
+																																																										    </soc:socios>
+
+
+360 167 96 0001- 18 - LTDA
+093 727 89 0001 -86 - ME
+
+197 803 95 0001 -10 - 
+
+329 491 34 0001- 40 - MEI
+
+32949134000140
+
+DELIVERY
+
+"phone1": "212-555-1234",
+    "phone2": "202-555-6789", 
+    -
+
+
+"feature_request": {
+    "STOREINFO":{}
+  }
+    https://code-with-me.global.jetbrains.com/mnfherifOX8oHPY77z7IAw#p=IU&fp=007CFEBC38E0789DADF2E41A2EE8364552C8B51F0AEB4B21AFB566C05D9A26BA&newUi=true
+
+
+
+    bauxar no gitLab  --> docker-images - branch --> feat-aws-develop-resources
+
+
+ -- Insert na store_group_features uma linha para a loja 0 usar o Define
+
+INSERT INTO kdtdb.store_group_features (store_group_id, whitelabel_id, feature_type_id, is_available, is_active,
+                                        created_at, updated_at, deleted_at)
+VALUES (4, null, 29, 1, 1, '2025-03-25 15:02:50', '2025-03-25 15:02:55', null);
+
+
+ -- Lembrar de quando subir para produção mudar as url e credencias do Define no Bureaux
+
+ <opcionais>
+        <opcional>anvisa</opcional>
+        <opcional>empresasMesmoEndereco</opcional>
+    </opcionais>
+    <extras>
+        <extra>acaoCiveis</extra>
+        <extra>chequesDevInfUsuario</extra>
+        <extra>chequesSemFundo</extra>
+        <extra>chequesSustado</extra>
+        <extra>falenciaRecJudicial</extra>
+        <extra>pendenciasRestricoes</extra>
+        <extra>protestos</extra>
+        <extra>quantidadeDeConsultas</extra>
+        <extra>sintegra</extra>
+        <extra>administradoresComRestricao</extra>
+        <extra>sociosComRestricao</extra>
+    </extras>
+
+
+legal_nature_code = 2135
+legal_nature - Natureza Jurida = EMPRESARIO (INDIVIDUAL)
+
+
+<idenc:codigo_natureza_juridica>2135</idenc:codigo_natureza_juridica>
+<idenc:natureza_juridica>EMPRESARIO (INDIVIDUAL)</idenc:natureza_juridica>
+
+CNPJ_LEGAL_NATURE_CODE
+
+SHIPPING
+shipping
+
+ {
+ "DEFINECNPJSITUATION()":1.0,
+ "DEFINECNPJLEGALNATURE()":1.0,
+ "DEFINECNPJTIMESINCEFOUNDATION()":2213.0,
+ "DEFINECNPJSHIPPINGZIPMATCH()":0.0,
+ "DEFINECNPJSHIPPINGCITYMATCH()":0.0,
+ "DEFINECNPJSHIPPINGSTATEMATCH()":0.0,
+ "DEFINECNPJSHIPPINGADDRESSMATCH()":0.0,
+ "DEFINECNPJBILLINGZIPMATCH()":0.0,
+ "DEFINECNPJBILLINGCITYMATCH()":0.0,
+ "DEFINECNPJBILLINGSTATEMATCH()":0.0,
+ "DEFINECNPJBILLINGADDRESSMATCH()":0.0
+ } 
+
+ (11) 2295-7027
